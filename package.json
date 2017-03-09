@@ -23,13 +23,16 @@
     "grunt-template": "^1.0.0",
     "intern": "^3.2.3",
     "load-grunt-tasks": "^3.5.0",
-    "qunitjs": "^2.0.1"
+    "precache": "0.0.0",
+    "qunitjs": "^2.0.1",
+    "sw-precache": "^5.0.0"
   },
   "description": "A bookmarklet password generator.",
   "homepage": "https://chriszarate.github.io/supergenpass/",
   "main": "Gruntfile.js",
   "scripts": {
-    "test": "grunt qunit && [ \"$TRAVIS_PULL_REQUEST\" != \"true\" ] && node_modules/.bin/intern-runner config=test/intern/main"
+    "test": "grunt qunit && [ \"$TRAVIS_PULL_REQUEST\" != \"true\" ] && node_modules/.bin/intern-runner config=test/intern/main",
+    "precache": "node_modules/sw-precache/cli.js --root=mobile"
   },
   "repository": {
     "type": "git",
